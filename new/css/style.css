@@ -1,2 +1,9 @@
 .card-comments img {
   width: 4rem; }
+.red-passion-gradient {
+  background-image: linear-gradient(to right, #212529 0%, #a90010 0%, #a90010 21%, #e31226 52%, #a90010 78%, #a90010 100%);; }
+.card-ancla{ position:absolute; top:-60px;}
+
+.sticky-offset {
+  top: 60px;
+}
