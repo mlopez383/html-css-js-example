@@ -371,6 +371,14 @@
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
+
+    //nav bar active item
+    $(document).ready(function() {
+        $('.nav-item').click(function() {
+            $('.nav-item.active').removeClass("active");
+            $(this).addClass("active");
+        });
+    });
   </script>
 </body>
 
