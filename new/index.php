@@ -247,27 +247,28 @@
               <div class="card-body">
 
                 <!-- Default form reply -->
-                <form>
+                <form id="contactForm" action="mail.php" method="post">
 
                   <!-- Comment -->
                   <div class="form-group">
                     <label for="replyFormComment">Tu comentario/mensaje</label>
-                    <textarea class="form-control" id="replyFormComment" rows="5"></textarea>
+                    <textarea class="form-control" id="replyFormComment"  name="replyFormComment" rows="5" required></textarea>
                   </div>
 
                   <!-- Name -->
                   <label for="replyFormName">Tu nombre</label>
-                  <input type="email" id="replyFormName" class="form-control">
+                  <input type="text" id="replyFormName" name="replyFormName" class="form-control" required>
 
                   <br>
 
                   <!-- Email -->
                   <label for="replyFormEmail">Tu e-mail</label>
-                  <input type="email" id="replyFormEmail" class="form-control">
+                  <input type="email" id="replyFormEmail" name="replyFormEmail" class="form-control" required>
 
 
                   <div class="text-center mt-4">
-                    <button class="btn btn-info btn-md" type="submit">Enviar</button>
+                    <button class="btn btn-info btn-md submit-btn" type="submit">Enviar</button>
+                    <div class="alert-msg"></div>
                   </div>
                 </form>
                 <!-- Default form reply -->
@@ -377,6 +378,37 @@
         $('.nav-item').click(function() {
             $('.nav-item.active').removeClass("active");
             $(this).addClass("active");
+        });
+    });
+
+
+    $(document).ready(function() {
+        var form = $('#contactForm'); // contact form
+        var submit = $('.submit-btn'); // submit button
+        var alert = $('.alert-msg'); // alert div for show alert message
+
+        // form submit event
+        form.on('submit', function(e) {
+            e.preventDefault(); // prevent default form submit
+
+            $.ajax({
+                url: 'mail.php', // form action url
+                type: 'POST', // form submit method get/post
+                dataType: 'html', // request type html/json/xml
+                data: form.serialize(), // serialize form data
+                beforeSend: function() {
+                    alert.fadeOut();
+                    submit.html('Enviando...'); // change submit button text
+                },
+                success: function(data) {
+                    alert.html(data).fadeIn(); // fade in response data
+                    form.trigger('reset'); // reset form
+                    submit.attr("style", "display: none !important");; // reset submit button text
+                },
+                error: function(e) {
+                    console.log(e)
+                }
+            });
         });
     });
   </script>
