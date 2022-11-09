@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
+  <title>Jesucristo Salvación</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="font-awesome/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -112,7 +112,7 @@
 
             <div class="card mb-4 wow fadeIn">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rrmtZJULq0U?rel=0" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/g0UtRGXuDYE?rel=0" allowfullscreen></iframe>
               </div>
             </div>
 
@@ -317,7 +317,7 @@
 
             <!--Card: -->
             <div class="mb-4 wow fadeIn">
-                <img src="img/Jesus.png" class="img-fluid" alt="">
+                <img src="img/image1.jpeg" class="img-fluid" alt="">
             </div>
             <!--Card: -->
 
